@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <meta charset="utf-8">
+    <title>Loops and More</title>
+    <script type="text/javascript">
+    /*Defining Table
+     *Input: Get number from user
+     *Processing: Add all odd numbers between 1 and n inclusive.
+     *Output: Total of all odd numbers
+     */
+       function addNumbers() {
+        var skip = 2;
+        var begin = 1;
+        var sum = 0;
+
+       /* Get Input*/
+         var n = parseFloat(document.getElementById('numberBox').value);
+
+    /*add odd integers between 1 and n inclusive*/
+
+          while (begin <= n) {
+            sum += begin;
+            begin += skip;
+        }
+        document.getElementById('outputDiv').innerHTML = sum;
+    }
+    </script>
+</head>
+<body>
+    <h1>Topic 1</h1>
+    <p>Loops, Conditional Statements, Functions, Variables, Parameters, Arrays and Associative Arrays</p>
+    <br>
+    <h2>Adding odd numbers</h2>
+ 		
+ 	Please enter a number <input type = "text" id ='numberBox'>
+ 	<button type="button" onclick="addNumbers()">Add odd numbers</button>
+ 	<div id='outputDiv'></div>
+  
+</body>
+</html>
