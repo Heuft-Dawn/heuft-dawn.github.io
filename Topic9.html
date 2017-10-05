@@ -5,14 +5,35 @@
     <meta charset="utf-8">
     <title>Topic 9</title>
     <script type="text/javascript">
-    
+        function clickButton() {
+    var x = document.getElementById("onClick").innerHTML;
+    document.getElementById("demo").innerHTML = x;
+}
     </script>
 </head>
 <body>
     <h1>Topic 9</h1>
     <p>Standard JavaScript Events Including those for Mobile Devices ( Ex. onTouchBegin, onLoad, etc.) and Animation and Transition Events</p>
     <br>
+    <p>Here is a sample list of common HTML events that JavaScript can be combined with to execute code.</p>
+        <ul>
+            <li id="onClick">onclick</li>
+            <li id="onTouch">onchange</li>
+            <li>onload</li>
+            <li>onmouseover</li>
+            <li>onmouseout</li>
+            <li>onkeydown</li>
+        </ul>
+    <p>In addition, here are a few events that are related to mobile devices. These execute when a finger interacts with a DOM event.</p>
+        <ul>
+            <li>touchstart</li>
+            <li>touchmove</li>
+            <li>touchend</li>
+        </ul>
     
-  
+    <p>Here is a simple example of the "onclick" event.  When you click the button below it will retrieve the first line item under common HTML events.</p>
+    <button onclick="clickButton()"> Click Me</button>
+    <p id="demo"></p>
+   
 </body>
 </html>
