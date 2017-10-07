@@ -27,16 +27,72 @@
         document.getElementById('outputDiv').innerHTML = sum;
     }
     </script>
+    <script>
+    /*Defining Table
+     *Input
+     *Processing: Using the modulus operator determine whether each number in the array is 
+     *odd or even.  Count all of the even numbers.
+     *Output: the number of even numbers in the array
+     */
+
+     function getNum () {
+        var list = [17, 8, 9, 6, 13, 22, 51, 88,102,44,5,7,9];
+        var countEven = countEvens(list)
+        document.getElementById('outputDiv2').innerHTML = countEven;
+     }
+
+     function countEvens(list)  {
+     var count = 0;
+        for (i=0; i < list.length; i++) {
+            if (list[i] % 2 == 0) {
+            //number is even
+            count = count + 1;
+        }
+            else {
+            //number is odd
+        }
+
+        }
+        // Output	
+        return count;
+        }
+         
+       
+ 	</script>
 </head>
 <body>
     <h1>Topic 1</h1>
     <p>Loops, Conditional Statements, Functions, Variables, Parameters, Arrays and Associative Arrays</p>
     <br>
-    <h2>Adding odd numbers</h2>
+    <h2>Sample Loop and Conditional Statement</h2>
+    <p> My first sample contains an example using/setting variables, a loop, and a function. </p>
+    <p>Enter a number in the box.  The loop will start with the number one and add two to the number each time it goes through the loop.  The function uses a while statement to check the number against the number entered in the box and the loop will continue until it reaches the number entered. In addition, it will add all the odd numbers as it goes through the loop.  </p>
+    <h3>Adding odd numbers</h3>
  		
  	Please enter a number <input type = "text" id ='numberBox'>
  	<button type="button" onclick="addNumbers()">Add odd numbers</button>
  	<div id='outputDiv'></div>
   
+    <h2>Array and Conditional Statement</h2>
+    <p>My next sample includes a conditional statement and an array. I have put a list of numbers in the array and the function will count how many of the numbers are even.</p>
+    <button type="button" onclick="getNum()"> Count Evens</button>
+    <div id='outputDiv2'></div>
+    
+    <h2>Experimenting with Arrays for Project</h2>
+    <p>I plan to create an ap for a conference.  In this sample, I've created arrays with session names and I'm experimenting with listing the sessions for each day.</p>
+    <br>
+    <p>The sessions scheduled for Friday are:</p>
+    <p id="friday"></p>
+    <br>
+    <p>The sessions scheduled for Saturday are:</p>
+    <p id="saturday"></p>
+    <script>
+        var fridayList = ["General session", " Creative Session", " Awards Dinner"];
+        document.getElementById("friday").innerHTML = fridayList;  
+        var saturdayList = ["General session", " Social Media Advertising", " Fabulous Workshops"];
+        document.getElementById("saturday").innerHTML = saturdayList;
+    </script>
+
+    
 </body>
 </html>
