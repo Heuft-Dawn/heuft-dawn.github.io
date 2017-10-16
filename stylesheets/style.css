@@ -1,3 +1,12 @@
+/*Formatting for HTML5 page*/
+#divLogo {
+    border: 2px solid grey;
+    height: 150px;
+    padding: 10px;
+    width: 400px;
+}
+
+/*table formatting */
 table {
     border-collapse: collapse;
 }
@@ -20,4 +29,39 @@ td {
 
 tr:nth-child(even) {
     background-color: #f2f2f2;
+}
+/*basic page styles */
+
+body {
+    background-color: #e7e7e7;
+}
+.header{
+    background-color:#3d6098;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/*Navigation */
+.topnav {
+    overflow: hidden;
+    background-color: #213159;
+}
+
+.topnav a{
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 10px 10px;
+    text-decoration: none;
+}
+
+.topnav a: hover {
+    background-color: #3d6098;
+}
+
+/* Buttons */
+button {
+    background-color: #f04b4c;
 }
