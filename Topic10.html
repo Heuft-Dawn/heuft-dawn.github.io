@@ -3,16 +3,80 @@
 <head>
     <link rel="stylesheet" href="stylesheets/style.css">
     <meta charset="utf-8">
-    <title>Topic 10</title>
+    <title>Topic 10 - HTML5</title>
     <script type="text/javascript">
-    
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+
+        function drop(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));
+        }
     </script>
 </head>
+    <div class="header">
+        <h1>CIT 261</h1>
+    </div>
+    <div class="topnav">
+        <a href="Topic1.html">Topic 1</a>
+        <a href="Topic2.html">Topic 2</a>
+        <a href="Topic3.html">Topic 3</a>
+        <a href="Topic4.html">Topic 4</a>
+        <a href="Topic5.html">Topic 5</a>
+        <a href="Topic6.html">Topic 6</a>
+        <a href="Topic7.html">Topic 7</a>
+        <a href="Topic9.html">Topic 8</a>
+        <a href="Topic9.html">Topic 9</a>
+        <a href="Topic10.html">Topic 10</a>
+        <a href="Topic11.html">Topic 11</a>
+        <a href="Topic12.html">Topic 12</a>
+        <a href="Topic13.html">Topic 13</a>
+    </div>
 <body>
     <h1>Topic 10</h1>
     <p>HTML5 Tags - Video, Audio, and Canvas</p>
     <br>
-    
+    <p>The drag/drop sample below demonstrates JavaScript events, and the HTML5 API Drag and Drop</p>
+    <p> Drag my logo into the box:</p>
+    <div id="divLogo" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<br>
+<img id="drag1" src="Stamptildawn-logo.png" draggable="true" ondragstart="drag(event)" width="350" height="100">
   
+<br>   
+   <p>Using the HTML5 Video Element</p>
+    <video width="320" height="240" controls>
+      <source src="mini-tag-tutorial.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    
+    <p>Here is an Audio Example</p>
+    <audio controls>
+    <source src="finding-joy.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <br>
+    <p>Here is an example using Canvas</p>
+    <canvas id="myCanvas" width="300" height="200" style="border: 1px solid grey;">
+        Your browser does not support the HTML5 canvas tag.
+    </canvas>
+    <script>
+        var canvas = document.getElementById("myCanvas");
+        var ctx = canvas.getContext("2d");
+        
+        //Create Gradient
+        var grd=ctx.createLinearGradient (0,0,200,0);
+        grd.addColorStop (0,"teal");
+        grd.addColorStop (1,"white");
+        
+        //Fill with gradient
+        ctx.fillStyle=grd;
+        ctx.fillRect (10,10,280,180);
+    </script>
 </body>
 </html>
