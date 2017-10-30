@@ -4,8 +4,11 @@
     <link rel="stylesheet" href="stylesheets/style.css">
     <meta charset="utf-8">
     <title>Topic 6</title>
-    <script type="text/javascript">
-    
+    <script type="application/javascript">
+    function setBodyAttr(attr, value){
+      if (document.body) eval('document.body.'+attr+'="'+value+'"');
+      else notSupported();
+    }
     </script>
 </head>
       <div class="header">
@@ -37,7 +40,57 @@
     <h1>Topic 6</h1>
     <p>DOM Manipulation Using createElement, appendChild, insertBefore, removeChild, etc.</p>
     <br>
+     <script type="text/javascript">
+    document.body.onload = addElement;
+        
+    function addElement () { 
+      // create a new div element 
+      // and give it some content 
+      var newDiv = document.createElement("div1"); 
+      var newContent = document.createTextNode("Hi there and greetings!"); 
+      newDiv.appendChild(newContent); //add the text node to the newly created div. 
+
+      // add the newly created element and its content into the DOM 
+      var currentDiv = document.getElementById("div1"); 
+      document.body.insertBefore(newDiv, currentDiv);
+}
+      function removeElement() {
+          var logo = document.getElementById("logo3");
+          logo.parentNode.removeChild(logo);
+      }   
+        function movePhoto() {
+            document.getElementById('target').appendChild(document.getElementById('append').lastChild);
+        }  
+         
+    </script>
+    <div id="div1"> The text above has been created dynamically.</div>
+    <div id='target'>
+        <br>
+    </div>
     
-  
+    <div> 
+      <h3>Text</h3>
+        <p>Change the text color to black or blue.</p>
+      <form> 
+        <select onChange="setBodyAttr('text',
+        this.options[this.selectedIndex].value);"> 
+          <option value="black">black 
+          <option value="darkblue">darkblue 
+        </select>
+          <br>
+          <br>
+      </form>
+    </div>
+    <div id="remove">
+        <img id="logo3" src=Stamptildawn-logo.png>
+        <br>
+        <button onclick="removeElement()">Remove Logo</button>
+        <br>
+        <br>
+    </div>
+    <div id="append">
+        <img id="enchant" src = 17-ai-enchantment-cards.jpg>
+    </div>
+  <button onclick="movePhoto()">Move Photo</button>
 </body>
 </html>
