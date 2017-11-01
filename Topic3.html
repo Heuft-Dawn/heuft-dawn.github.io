@@ -5,7 +5,15 @@
     <meta charset="utf-8">
     <title>Topic 3</title>
     <script type="text/javascript">
-    
+    var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        var myObj = JSON.parse(this.responseText);
+        document.getElementById("demo").innerHTML = myObj.data.amount;
+    }
+};
+xmlhttp.open("GET", "https://api.coinbase.com/v2/prices/spot?currency=USD", true);
+xmlhttp.send();
     </script>
 </head>
 <body>
@@ -37,7 +45,8 @@
     <h1>Topic 3</h1>
     <p>JSON Parse, Stringify</p>
     <br>
-    
+    <p>I used JSON to Parse the information from the Coinbase API and extract the current price of Bitcoin.</p>
+    <p id = "demo"></p>
   
 </body>
 </html>
