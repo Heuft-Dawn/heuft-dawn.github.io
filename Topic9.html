@@ -9,6 +9,13 @@
     var x = document.getElementById("onClick").innerHTML;
     document.getElementById("demo").innerHTML = x;
 }
+        function chooseSession(){
+            var x = document.getElementById("mySession").value;
+            document.getElementById("workshop").innerHTML = "You are registered for the " + x + " workshop."
+        }
+        function growField(){
+            
+        }
     </script>
       <div class="header">
         <h1>CIT 261 - Documentation - Dawn Heuft</h1>
@@ -55,10 +62,24 @@
             <li>touchmove</li>
             <li>touchend</li>
         </ul>
-    
+    <h2>OnClick Event</h2>
     <p>Here is a simple example of the "onclick" event.  When you click the button below it will retrieve the first line item under common HTML events.</p>
     <button onclick="clickButton()"> Click Me</button>
     <p id="demo"></p>
+    <h2>OnChange Event</h2>
+    <p>Here is an example of an "onchange" event.</p>
+    <select id="mySession" onchange="chooseSession()">
+        <option value = "Team Building">Team Building</option>
+        <option value = "Facebook Parties">Facebook Parties</option>
+        <option value = "Winning Workshops">Winning Workshops</option>
+    </select>
+    <h2>Trigger Transition</h2>
+    <p>When you select which workshop you would like to attend a function is triggered which outputs the value of the selected workshop.</p>
+    <p id="workshop"></p>
+    <p>Let's experiment with input fields.</p>
+    <div id="input">
+        <input type = "text" value="Transition Field"/>
+    </div>
    
 </body>
 </html>
