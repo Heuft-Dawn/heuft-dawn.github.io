@@ -5,7 +5,26 @@
     <meta charset="utf-8">
     <title>Topic 5</title>
     <script type="text/javascript">
-    
+    function store(){
+     var inputName= document.getElementById("name");
+     localStorage.setItem("name", inputName.value);
+       var inputEmail= document.getElementById("email");
+     localStorage.setItem("email", inputEmail.value);
+       var inputMessage= document.getElementById("message");
+     localStorage.setItem("message", inputMessage.value);
+    }
+    function storeSession(){
+     var inputColor= document.getElementById("color");
+     sessionStorage.setItem("color", inputColor.value);
+    }
+   function display() {
+      document.getElementById("dispname").innerHTML = localStorage.getItem("name");
+      document.getElementById("dispemail").innerHTML = localStorage.getItem("email");
+      document.getElementById("dispmessage").innerHTML = localStorage.getItem("message");
+   }
+    function displayColor() {
+      document.getElementById("dispcolor").innerHTML = sessionStorage.getItem("color");
+   }
     </script>
 </head>
       <div class="header">
@@ -37,7 +56,40 @@
     <h1>Topic 5</h1>
     <p>Local Storage API, Storing and Retrieving Simple Data, Arrays, Associative Arrays, and Objects</p>
     <br>
+    <h2>Local Storage Sample</h2>
+    <p>Enter information in the fields below.  The input will be stored in local storage.</p>
+    <form id="localStorageTest" method="post" action="">
+        <label>Name:</label>
+        <input type="text" name="name" id="name" value="" />
+        <br>
+
+        <label>Email:</label>
+        <input type="email" name="email" id="email" value="" />
+        <br>
+        <label>Message:</label>
+        <textarea name="message" id="message"></textarea>
+        <br>
+        <button onclick="store()" type="button">Store Form Input</button>
+    </form>
+    <p>Click the button below to see the items that have been added to local storage.  Close your browser window, return to this page and then click the button again and your information will still display.</p>
+    <button onclick="display()" type="button">Display Storage Items</button>
+    <p>Here are the items you entered into the fields above.</p>
+    <p id ="dispname"></p>
+    <p id = "dispemail"></p>
+    <p id = "dispmessage"></p>
     
-  
+    <h3>Session Only Local Storage</h3>
+    <p>This sample will store the information for one session only.</p>
+    <form id="localStorageSession" method="post" action="">
+        <label>Favorite Color:</label>
+        <input type="text" name="color" id="color" value="" />
+        <br>
+        <br>
+        <button onclick="storeSession()" type="button">Store Favorite Color</button>
+    </form>
+    <br>
+    <p>Click button to display favorite color entered above.  Close browser window and click button again and the color you entered should not be available anymore.</p>
+    <button onclick="displayColor()" type="button">Display Color</button>
+    <p id= "dispcolor"></p>
 </body>
 </html>
