@@ -5,7 +5,10 @@
     <meta charset="utf-8">
     <title>Topic 12</title>
     <script type="text/javascript">
-    
+    function flipCard(el)
+        {
+            el.className = className += "t2_flip";
+        }
     </script>
 </head>
 <body>
@@ -37,7 +40,28 @@
     <h1>Topic 12</h1>
     <p>Designing, Defining, and Triggering CSS3 Transforms without Custom Libraries (Thought Library)</p>
     <br>
-    
+    <h3>First example uses CSS and hover to trigger the transformation.</h3>
+    <div id="t1_container">
+        <div id="t1_card" class="shadow">
+            <div class="front face">
+            <img src="Stamptildawn-logo.png"/>
+        </div>
+        <div class="back face">
+        <h2>Follow me at Facebook.com/Stamptildawn</h2>
+        <p>I host crops and retreats and teach Cricut Classes.</p>
+        </div>
+        </div>
+    </div>
+   <div id="t2_container">
+       <div id="t2_card" onclick="flipCard(this)">
+            <div class="front face">
+            <img id=flipdemo src="1711-sotm.jpg"/>
+            </div>
+            <div class="back face">
+            <img id=flipdemo src="s1711-set.jpg"/>
+            </div>
+       </div>
+    </div> 
   
 </body>
 </html>
