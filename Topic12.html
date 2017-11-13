@@ -5,9 +5,13 @@
     <meta charset="utf-8">
     <title>Topic 12</title>
     <script type="text/javascript">
-    function flipCard(el)
-        {
-            el.className = className += "t2_flip";
+    function flipCard(){
+            var element = document.getElementById("t2_card");
+            if (element.classList == "front face"){
+                element.classList = "back face";
+            } else {
+                element.classList = "front face";
+            }
         }
     </script>
 </head>
@@ -52,8 +56,9 @@
         </div>
         </div>
     </div>
+    <h3>Second example uses Javascript to toggle the class and flip the card.</h3>
    <div id="t2_container">
-       <div id="t2_card" onclick="flipCard(this)">
+       <div id="t2_card" onclick="flipCard()">
             <div class="front face">
             <img id=flipdemo src="1711-sotm.jpg"/>
             </div>
