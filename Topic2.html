@@ -4,9 +4,7 @@
     <link rel="stylesheet" href="stylesheets/style.css">
     <meta charset="utf-8">
     <title>Topic 2</title>
-    <script type="text/javascript">
-    
-    </script>
+     
 </head>
       <div class="header">
         <h1>CIT 261 - Documentation - Dawn Heuft</h1>
@@ -37,7 +35,18 @@
     <h1>Topic 2</h1>
     <p>Object Creation Functions, Inheritance, Properties, Methods, Instantiation</p>
     <br>
-    
+    <p>The stampset and information below has been pulled from a JavaScript Object. I created a prototype using an object constructor function and added a method to the object</p>
+    <p id="displaystamp"></p>
+     <script type="text/javascript">
+        function Stamp(item, description, price){
+            this.catNum = item;
+            this.desc = description;
+            this.price = price;
+            this.listItem = function(){return this.catNum + "  " + this.desc + "  " + this.price}
+        }  
+        var stampSet = new Stamp ("M1174", "Merry Christmas", "$2.95");
+          document.getElementById("displaystamp").innerHTML = stampSet.listItem();
+    </script>
   
 </body>
 </html>
