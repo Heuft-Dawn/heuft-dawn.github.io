@@ -157,177 +157,39 @@ button {
   transform: rotateY(180deg);  
 }
 
-.cardFront {
-    
-}
 /*CSS Animations Styling Topic 13 */
-
-
-/*set size and colo
-
-.container {
-    height: 40vmin;
-    width: 40vmin;
-    background-color: teal;
+.icon {
+  animation-name: move;
+  animation-duration: 5s;
+  animation-fill-mode: backwards;
+  animation-timing-function: ease-in;
+  fill: teal;
+  height: 4vw;
+  position: absolute;
+  left: 40px;
+  top: 350px;
+  width: 4vw;
+}
+.card {
+  background: lightgrey;
+  height: 300px;
+  margin-left: 20px;
+  margin-top: -100px;
+  width: 500px;
 }
 
-/* Adjust size of body/html */
-
-html,
-body {
-    height: 100%;
-}
-.container-one {
-    padding: 1vmin;
+@keyframes move {
+  from{ transform: translatex(0)}
+  to{transform: translatex(300px)}
 }
 
-.orbiting-circle {
-    height: 25%;
-    width: 25%;
-    background-color: darkred;
-    border-radius: 50%;
-    animation: orbit 3s linear infinite;
+@keyframes change {
+  from{fill: red;}
+  to{fill: yellow;}
 }
 
-@keyframes orbit {
-    0% { transform: translate(0,0); }
-    5% { transform: translate(0,0); } /* don't change for 5% of the time...pause */
-    25% { transform: translate(300%,0%); } /* start moving again */
-    30% { transform: translate(300%,0%); } /* pause */
-    50% { transform: translate(300%,300%); } /* move */
-    55% { transform: translate(300%,300%); } /* pause */
-    75% { transform: translate(0%,300%); } /* start moving again */
-    80% { transform: translate(0%,300%); } /* pause */
-    100% { transform: translate(0%,0%); }
-}
-.container-two {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+@keyframes grow {
+  from{height: 4vw; width: 4vw;}
+  to{height: 8vw; width: 8vw;}
 }
 
-.morphing-circle {
-    height: 25%;
-    width: 25%;
-    background-color:darkred;	
-    border-radius: 50%;
-    transition: border-radius .5s ease, 
-                background-color .5s ease, 
-                transform .5s ease .5s;
-    animation: morphing-circle-square 3s linear infinite;
-}
-@keyframes morphing-circle-square {
-    0% {border-radius: 50%}
-    25% { 
-        border-radius: 50%;
-        background-color: darkred;
-    }
-    50% { /* now change to white square*/
-        border-radius: 0%;
-        background-color: white;
-        transform: rotate(0deg);
-    }
-    75% { /* stay a white square, but rotate 90deg */
-        border-radius: 0%;
-        background-color: white;
-        transform: rotate(90deg);   
-    }
-    100% { /* stay rotated at 90, but change back to a circle */
-        border-radius: 50%;
-        background-color: darkred;
-        transform: rotate(90deg);
-    }
-}
-.container-three {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}    
-.splitting-circle {
-  height: 25%;
-  width: 12.5%;
-  background-color: darkred;
-}
-.first-half {
-  border-top-left-radius: 25px;
-  border-bottom-left-radius: 25px;
-  animation: move-right 3s linear infinite;
-}
-@keyframes move-right {
-  0% {
-    transform: translateX(0);
-  }
-  20% {
-    transform: translateX(-5px);
-  }
-  50% {
-    transform: translateX(-5px);
-  }
-  80% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-.second-half {
-  border-top-right-radius: 25px;
-  border-bottom-right-radius: 25px;
-  animation: move-left 3s linear infinite;
-}
-@keyframes move-left {
-  0% {
-    transform: translateX(0);
-  }
-  20% {
-    transform: translateX(5px);
-  }
-  50% {
-    transform: translateX(5px);
-  }
-  80% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-.container-four {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.pulsing-circle {
-  height: 25%;
-  width: 25%;
-  background-color: darkred;
-  border-radius: 50%;
-  animation: pulse 3s linear infinite;
-}
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  48% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.5);
-  }
-  52% {
-    transform: scale(1);
-  }
-  
-  77% {
-    transform: scale(1);
-  }
-   79% {
-    transform: scale(1.5);
-  }
-   81% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
