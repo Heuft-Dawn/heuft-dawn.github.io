@@ -1,0 +1,49 @@
+body {
+    background-image: url("../spiration-light.png")
+}
+form {
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    padding: 20px;
+}
+fieldset {
+    border: 5px solid #519798;
+    display: block;
+    font-size: 1.25em;
+    margin-left: 2px;
+    margin-right: 2px;
+    padding-top: 0.35em;
+    padding-bottom: 0.625em;
+    padding-left: 0.75em;
+    padding-right: 0.75em; 
+}
+
+fieldset legend {
+    background: #519798;
+    border-radius: 5px;
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 1.75em;
+}
+h1 {
+    color: #519798;
+    font-size: 2em;
+}
+
+input[type=submit] {
+    background-color: #4caf50;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    margin: 8px 0;
+    padding: 14px, 20px;  
+}
+input[type=text] {
+    background-color: white;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    margin: 15px 0;
+    padding: 12px, 20px;
+    width: 100%;
+}
