@@ -10,30 +10,23 @@
      localStorage.setItem("name", inputName.value);
        var inputEmail= document.getElementById("email");
      localStorage.setItem("email", inputEmail.value);
-    document.getElementById("dispname").innerHTML = localStorage.getItem("name");
        window.location.href = "https://heuft-dawn.github.io/welcome.html";
     }
     </script>
 </head>
 <body>
        <div class="header">
-        <h1>Consultant Camp 2018</h1>
+           <img src="DAy-Camp-header.jpg" alt="Day Camp Logo" width=100%>
     </div>
+    <div class="card">
     <form>
          <fieldset>
           <legend>Registration</legend>
-          Name: <input type="text" name="name" id="name" value="" /><br>
-          Email: <input type="text" name="email" id="email" value="" /><br>
+          Name: <input type="text" name="name" id="name" value="" required/><br>
+          Email: <input type="text" name="email" id="email" value="" required/><br>
              <button onclick="store()" type="button">Submit</button>
          </fieldset>
     </form>
-     <p id ="dispname"></p>
-    <select id="mySession" onchange="chooseSession()">
-        <option value = "Chelsea PP">Chelsea Gardens Paper Pack</option>
-         <option value = "Sending Hugs">Sending Hugs Kit</option>
-        <option value = "Sent Deliver">Sent and Delivered Stamp Set</option>
-         <option value = "StargazerPP">Stargazer Paper Pack</option>
-    </select>
-  
+  </div>
 </body>
 </html>
