@@ -4,7 +4,26 @@
     <link rel="stylesheet" href="stylesheets/style2.css">
     <meta charset="utf-8">
     <title>Demo</title>
+<script type="text/javascript">
+   function getProjects() {
+            var httpRequest = new XMLHttpRequest();
+            httpRequest.onreadystatechange = function() {
+                if (httpRequest.readyState === XMLHttpRequest.DONE) {
+                    if (httpRequest.status === 200) {
+                        var json = JSON.parse(httpRequest.responseText);
 
+                        localStorage.setItem("projects", JSON.stringify(json));
+
+                        setSessionDropdown(json["Choose Projects"]);
+                    } else {
+                        alert('failed');
+                    }
+                }
+            }
+            httpRequest.open('GET', 'demo.json');
+            httpRequest.send();
+    
+</script>
 </head>
 <body onload="display()">
        <div class="header">
@@ -16,29 +35,21 @@
     <p>Please select which product you would like to use for your demonstration project. You will need to prepare 20 kits so order accordingly.</p>
         
     <select id="myProject" onchange="chooseProject()">
-        <option value = "Chelsea PP">Chelsea Gardens Paper Pack</option>
-         <option value = "Sending Hugs">Sending Hugs Kit</option>
-        <option value = "Sent Deliver">Sent and Delivered Stamp Set</option>
-         <option value = "StargazerPP">Stargazer Paper Pack</option>
+        <option value = "Choose">Choose Kit</option>
+        <option value = "Happy">A Slice of Happy Card Kit</option>
+         <option value = "Chelsea">Chelsea Gardens WOTG</option>
+        <option value = "Kitchen">Kitchen Traditions Cut Above Kit</option>
+         <option value = "Hugs">Sending Hugs Card Kit</option>
+        <option value = "Delivered">Sent and Delivered Stamp Set</option>
+        <option value = "Magical">Something Magical Card Kit</option>
+        <option value = "StargazerCard">Stargazer Card Kit</option>
+        <option value = "StargazerWOTG">Stargazer WOTG</option>
     </select>
-      <p id="thankyou">load thank you.</p>
+      <p id="thankyou"></p>
 
 <button type="button" onclick="loadDoc()">Change Content</button>
-  <script type="text/javascript">
-   function loadDoc() {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      document.getElementById("thankyou").innerHTML = this.responseText;
-    }
-  };
-  xhttp.open("GET", "thank-you.txt", true);
-  xhttp.send();
-}
-    
-</script>
+  
   </div>
-   
     
 </body>
 </html>
