@@ -1,1 +1,3 @@
-<p>Thank you for signing up for Consultant Camp!</p>
+<h3 id ="dispname"></h3>
+<p>You are registered for Consultant Camp!</p>
+<p>See you on January 6th!</p>
