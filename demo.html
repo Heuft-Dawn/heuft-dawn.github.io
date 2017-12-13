@@ -5,12 +5,21 @@
     <meta charset="utf-8">
     <title>Demo</title>
     <script type="text/javascript">
-   function store(){
+   function register(){
      var inputName= document.getElementById("name");
      localStorage.setItem("name", inputName.value);
        var inputEmail= document.getElementById("email");
      localStorage.setItem("email", inputEmail.value);
        window.location.href = "https://heuft-dawn.github.io/welcome.html";
+       var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.open("GET", "thank-you.txt", true);
+  xhttp.send();
     }
     </script>
 </head>
@@ -31,9 +40,11 @@
           <legend>Registration</legend>
           Name: <input type="text" name="name" id="name" value="" required/><br>
           Email: <input type="text" name="email" id="email" value="" required/><br>
-             <button onclick="store()" type="button">Submit</button>
+             <button onclick="register()" type="button">Submit</button>
          </fieldset>
     </form>
+        <p id=thankyou></p>
+        
   </div>
 </body>
 </html>
