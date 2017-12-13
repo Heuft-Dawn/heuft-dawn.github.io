@@ -4,17 +4,7 @@
     <link rel="stylesheet" href="stylesheets/style2.css">
     <meta charset="utf-8">
     <title>Demo</title>
-<script type="text/javascript">
-   var xmlhttp = new XMLHttpRequest();
-xmlhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-        var myObj = JSON.parse(this.responseText);
-        document.getElementById("demo").innerHTML = myObj.data.amount;
-    }
-};
-xmlhttp.open("GET", "https://heuft-dawn.github.io/demo.json", true);
-xmlhttp.send();
-</script>
+
 </head>
 <body onload="display()">
        <div class="header">
@@ -31,6 +21,24 @@ xmlhttp.send();
         <option value = "Sent Deliver">Sent and Delivered Stamp Set</option>
          <option value = "StargazerPP">Stargazer Paper Pack</option>
     </select>
+      <p id="thankyou">load thank you.</p>
+
+<button type="button" onclick="loadDoc()">Change Content</button>
+  <script type="text/javascript">
+   function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("thankyou").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "thank-you.txt", true);
+  xhttp.send();
+}
+    
+</script>
   </div>
+   
+    
 </body>
 </html>
