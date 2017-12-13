@@ -5,11 +5,15 @@
     <meta charset="utf-8">
     <title>Demo</title>
 <script type="text/javascript">
-   function confirm() {
+   function chooseProject() {
         document.getElementById("dispname").innerHTML = localStorage.getItem("name");
+   }
+    function confirm(){
+       xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       document.getElementById("thankyou").innerHTML =
       this.responseText;
+    }
   };
   xhttp.open("GET", "thank-you.txt", true);
   xhttp.send();
@@ -35,11 +39,10 @@
         <option value = "StargazerCard">Stargazer Card Kit</option>
         <option value = "StargazerWOTG">Stargazer WOTG</option>
     </select>
-        <br>
-        <div id="thankyou">
-  
+      <p id="thankyou"></p>
+
 <button type="button" onclick="confirm()">Confirm Registration</button>
-  </div>
+  
   </div>
     
 </body>
