@@ -9,7 +9,7 @@
         document.getElementById("dispname").innerHTML = localStorage.getItem("name");
    }
     function confirm(){
-        var xmlhttp = new XMLHttpRequest();
+        var xhttp = new XMLHttpRequest();
        xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       document.getElementById("thankyou").innerHTML =
@@ -21,7 +21,7 @@
     }    
 </script>
 </head>
-<body onload="display()">
+<body>
        <div class="header">
          <img src="DAy-Camp-header.jpg" alt="Day Camp Logo" width=100%>
     </div>
